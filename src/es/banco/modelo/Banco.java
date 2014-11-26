@@ -1,7 +1,6 @@
 package es.banco.modelo;
 
 
-
 public class Banco {
 	private TarjetaCreditoDAO tarjetaCreditodao = TarjetaCreditoDAO.getInstance();
 	
@@ -13,5 +12,15 @@ public class Banco {
 	      return  id;
 		
 	}
+	
+	public TarjetaCredito ampliarCupo(int id) {
+	       
+        TarjetaCredito tarjetaCredito =tarjetaCreditodao.ampliarCupo(id);
+      
+        return tarjetaCredito;
+    }
+	
+	
 
 }
+  
