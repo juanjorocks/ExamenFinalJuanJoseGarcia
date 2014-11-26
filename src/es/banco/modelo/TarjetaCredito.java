@@ -7,13 +7,13 @@ public class TarjetaCredito {
 	private int cupoDisponible;
 	private String tipo;
 	private String numeroComprobacion;
-	private String contraseña;
+	private String contrasenha;
 	
 	//CONSTRUCTORES
 	
 	public TarjetaCredito(int id, String numero, int cupoMaximo,
 			int cupoDisponible, String tipo, String numeroComprobacion,
-			String contraseña) {
+			String contrasenha) {
 		super();
 		this.id = id;
 		this.numero = numero;
@@ -21,18 +21,18 @@ public class TarjetaCredito {
 		this.cupoDisponible = cupoDisponible;
 		this.tipo = tipo;
 		this.numeroComprobacion = numeroComprobacion;
-		this.contraseña = contraseña;
+		this.contrasenha = contrasenha;
 	}
 
 	public TarjetaCredito(String numero, int cupoMaximo, int cupoDisponible,
-			String tipo, String numeroComprobacion, String contraseña) {
+			String tipo, String numeroComprobacion, String contrasenha) {
 		super();
 		this.numero = numero;
 		this.cupoMaximo = cupoMaximo;
 		this.cupoDisponible = cupoDisponible;
 		this.tipo = tipo;
 		this.numeroComprobacion = numeroComprobacion;
-		this.contraseña = contraseña;
+		this.contrasenha = contrasenha;
 	}
 
 	public TarjetaCredito() {
@@ -89,12 +89,12 @@ public class TarjetaCredito {
 		this.numeroComprobacion = numeroComprobacion;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasenha() {
+		return contrasenha;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasenha(String contrasenha) {
+		this.contrasenha = contrasenha;
 	}
 	
 	

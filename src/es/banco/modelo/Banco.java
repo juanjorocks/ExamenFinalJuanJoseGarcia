@@ -1,23 +1,26 @@
 package es.banco.modelo;
 
+import es.banco.integracion.TarjetaCreditoDAO;
+
 
 public class Banco {
 	private TarjetaCreditoDAO tarjetaCreditodao = TarjetaCreditoDAO.getInstance();
 	
-	public int DarAlta(String numero, int cupoMaximo, int cupoDisponible, String tipo,
-						String numeroComprobacion, String contraseña){
-		 TarjetaCredito tarjetaCredito= new TarjetaCredito(numero, cupoMaximo, cupoDisponible, tipo,
-				 											numeroComprobacion, contraseña);
-		 int id =tarjetaCreditodao.darAlta(tarjetaCredito);
-	      return  id;
+	public String DarAlta(String numero, int cupoMaximo, int cupoDisponible, String tipo, String numeroComprobacion, String contrasenha){
 		
+		 TarjetaCredito tarjetaCredito= new TarjetaCredito(numero, cupoMaximo, cupoDisponible, tipo, numeroComprobacion, contrasenha);
+		 String msg;
+		 int id =tarjetaCreditodao.darAlta(tarjetaCredito);
+	     msg="Tarjetas dadas de alta :" + id;
+		 return msg;
 	}
 	
-	public TarjetaCredito ampliarCupo(int id) {
+	public String ampliarCupo(int id, int cupoDisponible ) {
 	       
-        TarjetaCredito tarjetaCredito =tarjetaCreditodao.ampliarCupo(id);
-      
-        return tarjetaCredito;
+		String msg;
+		int tarjetasampliadas=tarjetaCreditodao.ampliarCupo(cupoDisponible, id);
+			msg="Tarjetas con cupo ampliado :" + tarjetasampliadas;
+		return msg;
     }
 	
 	
