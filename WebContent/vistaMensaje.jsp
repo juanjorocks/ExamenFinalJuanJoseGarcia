@@ -13,6 +13,6 @@
 <body>
      <h3>Respuesta de la base de datos:</h3>
      <p><%=mensaje %></p>
-     <p><a href="inicio.html"  >Ir a Inicio</a></p>
+     <p><a href="index.html"  >Ir a Inicio</a></p>
 </body>
 </html>

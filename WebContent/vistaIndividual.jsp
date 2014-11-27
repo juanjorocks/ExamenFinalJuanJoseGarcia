@@ -34,6 +34,6 @@
 </table>
  <input class="botones" type="submit" value="AmpliarCupo" id="ampliarCupo" name="ampliarCupo"/>
 </form>
-  <a href="inicio.html">Ir a inicio</a>
+  <a href="index.html">Ir a inicio</a>
 </body>
 </html>
