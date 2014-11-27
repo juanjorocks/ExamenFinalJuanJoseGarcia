@@ -34,7 +34,7 @@
                     <url>http://localhost:8090/manager/text</url>
                     <username>tomcat</username>
                     <password>tomcat</password>
-                    <path>/BancoJuanjo</path>
+                    <path>/Banco</path>
                 </configuration>
             </plugin>
     </plugins>
