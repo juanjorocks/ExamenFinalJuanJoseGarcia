@@ -2,11 +2,16 @@ package es.banco.controlador;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import es.banco.modelo.Banco;
+import es.banco.modelo.TarjetaCredito;
+
 
 /**
  * Servlet implementation class DarAltaServlet
@@ -33,8 +38,14 @@ public class DarAltaServlet extends HttpServlet {
 				int cupoDisponible = Integer.parseInt(request.getParameter("cupoDisponible"));
 				String tipo = request.getParameter("tipo");
 				String numeroComprobacion = request.getParameter("numeroComprobacion");
-				String contraseña= request.getParameter("contraseña");
-		
+				String contrasenha= request.getParameter("contrasenha");
+				String b="";
+				Banco banco= new Banco();
+				b=banco.DarAlta(numero, cupoMaximo, cupoDisponible, tipo, numeroComprobacion, contrasenha);
+				request.setAttribute("mensaje", b);
+				RequestDispatcher rd;
+				rd=request.getRequestDispatcher("vistaMensaje.jsp");
+				rd.forward(request, response);
 	}
 
 	/**

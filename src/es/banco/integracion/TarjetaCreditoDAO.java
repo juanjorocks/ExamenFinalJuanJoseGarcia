@@ -83,6 +83,7 @@ public int darAlta(TarjetaCredito tarjetaCredito) {
           }
      return id;
 }
+
 private int ultimoId() {
 	int  idM=90;
 	try {
@@ -106,6 +107,7 @@ private int ultimoId() {
       }
  return idM;
 }
+
 public int ampliarCupo(int cupoDisponible, int id) {
 	int filasAfectada=0;
 	try {
@@ -129,5 +131,40 @@ public int ampliarCupo(int cupoDisponible, int id) {
 	}
 	return filasAfectada;
 	}
+
+public TarjetaCredito consultarUno(int id) {
+	TarjetaCredito t = new TarjetaCredito();
+    try {
+     //CONEXION
+   	     conectar();
+     //CONSULTA
+          PreparedStatement ps;
+          ps = cx.prepareStatement("SELECT * FROM banco WHERE ID=?");
+         //SET ?
+              ps.setInt(1, id);
+             //EJECUTAR
+               ResultSet rs =ps.executeQuery();  
+           //RESPUESTA BBDD
+             if(rs.next()) {
+            	      t.setId(rs.getInt("id"));
+                      t.setNumero(rs.getString("numero"));
+                      t.setCupoMaximo(rs.getInt("cupoMaximo"));
+                      t.setCupoDisponible(rs.getInt("cupoDisponible"));
+                      t.setTipo(rs.getString("tipo"));
+                      t.setNumeroComprobacion(rs.getString("numeroComprobacion"));
+                      t.setContrasenha(rs.getString("contrasenha"));
+       	           	  
+                  }
+     
+  } catch (SQLException e) {
+       // TODO Auto-generated catch block
+       Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Error SQL ", e);
+   }
+      finally {
+          //DESCONEXION
+            desconectar();
+      }
+  return t;
+}
 
 }

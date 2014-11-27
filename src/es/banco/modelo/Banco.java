@@ -23,6 +23,13 @@ public class Banco {
 		return msg;
     }
 	
+	public TarjetaCredito consultarUno(int id) {
+	       // validar si el q solicita la consulta tiene autorizacion
+	        TarjetaCredito tarjetaCredito = tarjetaCreditodao.consultarUno(id);
+	      
+	        return tarjetaCredito;
+	}
+	
 	
 
 }
