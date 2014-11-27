@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.banco.modelo.Banco;
+import es.banco.modelo.BancoWS;
 
 /**
  * Servlet implementation class PagarServlet
@@ -40,7 +41,7 @@ public class PagarServlet extends HttpServlet {
 		String contrasenha=request.getParameter("contrasenha");
 		
 		String ampliarCupo=request.getParameter("ampliarCupo");
-		Banco banco= new Banco();
+		BancoWS banco= new Banco();
 		String b="";
 		
 		if(ampliarCupo!=null)

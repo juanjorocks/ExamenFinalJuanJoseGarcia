@@ -114,7 +114,7 @@ public int ampliarCupo(int cupoDisponible, int id) {
 		//CONEXION
 		conectar();
 		//SENTENCIA
-		PreparedStatement ps = cx.prepareStatement("UPDATE banco SET cupoDisponible=? WHERE ID=?");
+		PreparedStatement ps = cx.prepareStatement("UPDATE tarjetaCredito SET cupoDisponible=? WHERE ID=?");
 		ps.setInt(1, cupoDisponible);
 		ps.setInt(2, id);
 		//CONSULTA
