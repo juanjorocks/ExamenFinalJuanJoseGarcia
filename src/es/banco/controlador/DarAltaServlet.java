@@ -37,6 +37,12 @@ public class DarAltaServlet extends HttpServlet {
 				int cupoMaximo = Integer.parseInt(request.getParameter("cupoMaximo"));
 				int cupoDisponible = Integer.parseInt(request.getParameter("cupoDisponible"));
 				String tipo = request.getParameter("tipo");
+				String tipoBBDD;
+				if(tipo.equals("tipoV")){
+					tipoBBDD="VISA";
+				}else{
+					tipoBBDD="MasterCard";
+				}
 				String numeroComprobacion = request.getParameter("numeroComprobacion");
 				String contrasenha= request.getParameter("contrasenha");
 				String b="";
