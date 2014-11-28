@@ -11,7 +11,7 @@
          mensaje ="";%>
 </head>
 <body>
-     <h3>Respuesta de la base de datos:</h3>
+     <h3>RESPUESTA</h3>
      <p><%=mensaje %></p>
      <p><a href="index.html"  >Ir a Inicio</a></p>
 </body>
